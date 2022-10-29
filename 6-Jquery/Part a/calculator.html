@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Form</title>
+  <style>
+    label {	float: left;
+			width: 150px;}
+      #container{
+          width: 700px;
+          margin: auto;
+          background-color: beige;
+      } 
+      main{
+          padding: 50px;
+      }
+  </style>
+
+    
+ </head>
+ <body>
+ <div id="container">
+
+    <div class="uName">
+        <h1>Hi <span id="userdisp">Ruchita!</span></h1>
+        <script>
+          var user2 = sessionStorage.getItem("user2");
+          console.log(user2);
+          document.getElementById('userdisp').innerHTML=user2;
+          </script>
+        <h3>Start your calculation below</h3>
+      </div>
+	 
+	 <main>
+                 
+		 <form id="myForm">
+			
+			<label for="input1">Input 1st Number</label>
+			<input type="text" name="input1" id="input1" placeholder="1st number" required/>	
+			<br><br>
+			
+            <label for="input2">Input 2nd number</label>
+			<input type="text" name="input2" id="input2" placeholder="2nd number" required/>
+			<br><br>			
+
+			<label for="input3">Input 3rd number</label>
+			<input type="text" name="input3" id="input3" placeholder="3rd number" required/>
+			<br><br>
+
+            <label for="result">Result</label>
+			<input type="text" name="result" id="result" disabled/>
+			<br><br>
+            
+            <div >
+            <input type="button" id="add" value="Add">
+            <input type="button" id="subtract" value="Subtract">
+            <input type="button" id="multiply" value="Multiply">
+            <input type="button" id="divide" value="Divide">
+            </div>
+
+        </form>         
+    </main>
+    </div>
+    <script src="./calculator.js"></script>
+    </body>
+    </html>
+
+			
