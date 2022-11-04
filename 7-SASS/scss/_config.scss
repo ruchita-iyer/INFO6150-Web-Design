@@ -1,0 +1,38 @@
+$heading-text-color:white;
+$text-color: black;
+$primary-color: #4B371C;
+//$secondary-color:#9A7B4F;
+
+//$primary-color: #ffffff;
+$secondary-color:#9A7B4F;
+
+$font:'Roboto', sans-serif;
+$font-heading:'Dancing Script', cursive;
+
+@function set-text-color($color){
+    @if(lightness($color)>70){
+        @return $heading-text-color;
+    }
+    @else{
+        @return $text-color;
+    }
+}
+
+@mixin set-background($color){
+    background-color: $color;
+    color: set-text-color($color);
+
+}
+
+$amount: (1,2,3,4);
+@each $space in $amount{
+    .stat-#{$space}{
+        margin: 0 30px;
+  text-align: center;
+  width: 800px;
+    }
+
+    .fa {
+        color: $heading-text-color;
+}
+}
